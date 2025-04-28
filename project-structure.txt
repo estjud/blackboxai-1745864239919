@@ -1,0 +1,48 @@
+CRM Website Structure:
+
+/assets
+  /css
+    - styles.css
+  /js
+    - auth.js
+    - dashboard.js
+    - users.js
+    - sheets.js
+
+/pages
+  - login.html
+  - dashboard.html
+  - users.html
+  - profile.html
+
+- index.html (login page)
+
+Features:
+1. Authentication System
+   - Login form with email/password
+   - Session management
+   - Logout functionality
+
+2. Admin Dashboard
+   - Overview statistics
+   - Quick actions menu
+   - Google Sheets data integration
+   - Recent activities
+
+3. User Management
+   - User list view
+   - Add/Edit/Delete users
+   - User roles and permissions
+
+4. Profile Management
+   - View/Edit profile
+   - Change password
+   - Account settings
+
+Technologies:
+- HTML5
+- Tailwind CSS (via CDN)
+- JavaScript
+- Google Sheets API
+- Font Awesome icons
+- Google Fonts
