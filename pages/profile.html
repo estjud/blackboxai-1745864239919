@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM - Profile Settings</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <div class="bg-gray-900 text-white w-64 py-4 flex flex-col">
+            <div class="px-4 py-2 flex items-center">
+                <i class="fas fa-cube text-blue-500 text-2xl mr-2"></i>
+                <span class="text-lg font-semibold">CRM System</span>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <nav class="mt-8 flex-1">
+                <a href="dashboard.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white">
+                    <i class="fas fa-home w-6"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="users.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white">
+                    <i class="fas fa-users w-6"></i>
+                    <span>Users</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white">
+                    <i class="fas fa-table w-6"></i>
+                    <span>Google Sheets</span>
+                </a>
+                <a href="profile.html" class="flex items-center px-4 py-3 bg-gray-800 text-blue-500">
+                    <i class="fas fa-user w-6"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+
+            <!-- User Menu -->
+            <div class="px-4 py-4 border-t border-gray-800">
+                <div class="flex items-center">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="Admin" class="w-8 h-8 rounded-full">
+                    <div class="ml-3">
+                        <p class="text-sm font-medium">Admin User</p>
+                        <button id="logoutBtn" class="text-sm text-gray-400 hover:text-white">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Header -->
+            <header class="bg-white shadow-sm">
+                <div class="px-4 py-4">
+                    <h1 class="text-2xl font-semibold text-gray-900">Profile Settings</h1>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Profile Information -->
+                    <div class="bg-white rounded-lg shadow mb-6">
+                        <div class="p-6">
+                            <h2 class="text-lg font-semibold text-gray-900 mb-6">Profile Information</h2>
+                            <div class="flex items-center mb-6">
+                                <img src="https://ui-avatars.com/api/?name=Admin&size=128&background=random" 
+                                     alt="Profile" 
+                                     class="w-32 h-32 rounded-full">
+                                <div class="ml-6">
+                                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                                        <i class="fas fa-camera mr-2"></i>Change Photo
+                                    </button>
+                                    <p class="text-sm text-gray-500 mt-2">JPG, GIF or PNG. Max size of 800K</p>
+                                </div>
+                            </div>
+                            <form id="profileForm" class="space-y-6">
+                                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Full Name</label>
+                                        <input type="text" value="Admin User" 
+                                               class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Email Address</label>
+                                        <input type="email" value="admin@example.com" 
+                                               class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                        <input type="tel" placeholder="+1 (555) 000-0000" 
+                                               class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Role</label>
+                                        <input type="text" value="Administrator" disabled 
+                                               class="mt-1 block w-full bg-gray-50 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Bio</label>
+                                    <textarea rows="3" 
+                                              class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                              placeholder="Write a few sentences about yourself..."></textarea>
+                                </div>
+                                <div class="flex justify-end">
+                                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Password Change -->
+                    <div class="bg-white rounded-lg shadow mb-6">
+                        <div class="p-6">
+                            <h2 class="text-lg font-semibold text-gray-900 mb-6">Change Password</h2>
+                            <form id="passwordForm" class="space-y-6">
+                                <div class="grid grid-cols-1 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Current Password</label>
+                                        <input type="password" 
+                                               class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">New Password</label>
+                                        <input type="password" 
+                                               class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Confirm New Password</label>
+                                        <input type="password" 
+                                               class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    </div>
+                                </div>
+                                <div class="flex justify-end">
+                                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                                        Update Password
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Notification Settings -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6">
+                            <h2 class="text-lg font-semibold text-gray-900 mb-6">Notification Settings</h2>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h3 class="text-sm font-medium text-gray-900">Email Notifications</h3>
+                                        <p class="text-sm text-gray-500">Receive email notifications about account activity</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h3 class="text-sm font-medium text-gray-900">System Updates</h3>
+                                        <p class="text-sm text-gray-500">Get notified about system updates and maintenance</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h3 class="text-sm font-medium text-gray-900">Newsletter</h3>
+                                        <p class="text-sm text-gray-500">Receive our newsletter with updates and tips</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Check authentication
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!localStorage.getItem('isAuthenticated')) {
+                window.location.href = '../index.html';
+            }
+        });
+
+        // Logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            localStorage.removeItem('isAuthenticated');
+            localStorage.removeItem('userRole');
+            window.location.href = '../index.html';
+        });
+
+        // Profile form submission
+        document.getElementById('profileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically make an API call to update the profile
+            alert('Profile updated successfully!');
+        });
+
+        // Password form submission
+        document.getElementById('passwordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically make an API call to update the password
+            alert('Password updated successfully!');
+        });
+    </script>
+
+    <style>
+        /* Custom switch styling */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #3B82F6;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+</body>
+</html>
